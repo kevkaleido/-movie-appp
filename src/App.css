@@ -2,3 +2,7 @@
 .App {
   @apply text-center;
 }
+
+body{
+  background: rgb(169, 42, 227);
+}

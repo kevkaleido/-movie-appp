@@ -15,22 +15,22 @@ function Header({ onSearch }) {
   };
 
   return (
-    <header className="bg-blue-600 p-4 text-white flex justify-between items-center">
+    <header className="bg-purple-600 p-5 text-white flex justify-between items-center">
       <Link to="/" className="text-2xl">
         NewView
       </Link>
       <div className="flex items-center space-x-2">
         <input
           type="text"
-          placeholder="Search..."
-          className="custom-placeholder p-2 w-full max-w-md rounded bg-blue-500 text-white"
+          placeholder="search.."
+          className="custom-placeholder p-1 w-full max-w-md rounded bg-white-100 text-black"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyPress={handleKeyPress}
         />
         <button
           onClick={handleSearch}
-          className="bg-blue-700 hover:bg-blue-800 text-white p-2 rounded"
+          className="bg-purple-700 hover:bg-purple-800 text-white p-2 rounded"
         >
           Search
         </button>

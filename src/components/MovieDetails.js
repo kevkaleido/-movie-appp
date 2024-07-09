@@ -37,22 +37,23 @@ function MovieDetails() {
   }
 
   return (
-    <div className="movie-details p-4 max-w-4xl mx-auto mt-10 bg-white rounded-lg shadow-md">
-      {movie.poster_path ? (
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title}
-          className="w-full h-96 object-contain rounded mb-4"  // Adjust height and use object-contain class
-        />
-      ) : (
-        <p>No image available</p>
-      )}
-      <h2 className="text-3xl font-bold mb-4">{movie.title}</h2>
-      <p className="text-gray-700 mb-4">{movie.overview}</p>
-      <div className="flex justify-between mb-4">
-        <p className="text-gray-700">Release Date: {movie.release_date}</p>
-        <p className="text-gray-700">Rating: {movie.vote_average}</p>
-      </div>
+    <div className="movie-details p-8 max-w-4xl mx-auto mt-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-md">
+    {movie.poster_path ? (
+      <img
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        alt={movie.title}
+        className="w-full h-100 object-contain rounded mb-4"
+      />
+    ) : (
+      <p>No image available</p>
+    )}
+    <h2 className="text-3xl font-bold mb-4">{movie.title}</h2>
+    <p className="text-gray-100 mb-4">{movie.overview}</p>
+    <div className="flex flex-col sm:flex-row justify-between mb-4">
+      <p className="text-gray-100">Release Date: {movie.release_date}</p>
+      <p className="text-gray-100">Rating: {movie.vote_average}</p>
+    </div>
+  
       {trailerKey && (
         <div className="trailer mb-4">
           <h3 className="text-2xl font-bold mb-2">Trailer</h3>
