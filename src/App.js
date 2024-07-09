@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import MovieList from './components/MovieList';
+import MovieDetails from './components/MovieDetails';
+import { fetchMovies } from './services/movieService';
 import './App.css';
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const handleSearch = (query) => {
+    setLoading(true);
+    fetchMovies(query).then(data => {
+      setMovies(data);
+      setLoading(false);
+    });
+  };
+
+  useEffect(() => {
+    handleSearch('');
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header onSearch={handleSearch} />
+        <Routes>
+          <Route
+            path="/"
+            element={loading ? <p>Loading...</p> : <MovieList movies={movies} />}
+          />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
