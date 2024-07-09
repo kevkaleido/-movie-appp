@@ -8,10 +8,10 @@ function MovieCard({ movie }) {
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
-          className="rounded mb-4"
+          className="w-full h-48 object-contain rounded mb-2"  // Use object-contain class
         />
-        <h2 className="text-xl font-bold">{movie.title}</h2>
-        <p className="text-gray-700">{movie.overview}</p>
+        <h2 className="text-xl font-bold mb-2">{movie.title}</h2>
+        <p className="text-gray-700 truncate">{movie.overview}</p>
       </div>
     </Link>
   );
