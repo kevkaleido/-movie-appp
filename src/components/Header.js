@@ -16,7 +16,7 @@ function Header({ onSearch }) {
 
   return (
     <header className="bg-purple-600 p-5 text-white flex justify-between items-center">
-     <a href="/" className="text-4xl">
+     <a href="/" className="text-2xl">
   NewView
 </a>
 
