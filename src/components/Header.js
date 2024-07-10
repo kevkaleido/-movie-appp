@@ -16,9 +16,10 @@ function Header({ onSearch }) {
 
   return (
     <header className="bg-purple-600 p-5 text-white flex justify-between items-center">
-      <Link to="/" className="text-2xl">
-        NewView
-      </Link>
+     <a href="/" className="text-4xl">
+  NewView
+</a>
+
       <div className="flex items-center space-x-2">
         <input
           type="text"
