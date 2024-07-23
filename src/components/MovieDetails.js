@@ -42,7 +42,7 @@ function MovieDetails() {
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        className="w-full h-100 object-contain rounded mb-4"
+        className="w-3/4 h-80 object-contain rounded mb-2 mx-auto"
       />
     ) : (
       <p>No image available</p>
